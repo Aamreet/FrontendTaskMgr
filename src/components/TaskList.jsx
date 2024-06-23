@@ -29,7 +29,7 @@ const TaskList = ({ taskList, setTaskList }) => {
   const handleDelete = async (taskId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:3000/deleteTask/${taskId}`,
+        `https://taskmanagerapp12.onrender.com/deleteTask/${taskId}`,
         {
           method: "DELETE",
         }
@@ -59,7 +59,7 @@ const TaskList = ({ taskList, setTaskList }) => {
   const handleUpdate = async () => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:3000/updateTask/${editedTask._id}`,
+        `https://taskmanagerapp12.onrender.com/updateTask/${editedTask._id}`,
         {
           method: "PUT",
           headers: {
@@ -205,8 +205,8 @@ const TaskList = ({ taskList, setTaskList }) => {
                 >
                   {renderShortDescription(task.description)}
                   <span>
-                      <CiCircleMore className="more-icon" />
-                    </span>
+                    <CiCircleMore className="more-icon" />
+                  </span>
                 </p>
                 <p>{formatDate(task.dueDate)}</p>
               </div>

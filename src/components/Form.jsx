@@ -17,13 +17,16 @@ const Form = ({ fetchTasks }) => {
 
     try {
       console.log("ok");
-      const response = await fetch("http://127.0.0.1:3000/createTask", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(task),
-      });
+      const response = await fetch(
+        "https://taskmanagerapp12.onrender.com/createTask",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(task),
+        }
+      );
       console.log("ok2");
       if (response.ok) {
         console.log("Task added");

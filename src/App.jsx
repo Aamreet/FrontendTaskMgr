@@ -13,7 +13,7 @@
 //     console.log("abc");
 //     const fetchTasks = async () => {
 //       try {
-//         const response = await fetch("http://127.0.0.1:3000/getTask");
+//         const response = await fetch("https://taskmanagerapp12.onrender.com/getTask");
 //         if (response.ok) {
 //           const data = await response.json();
 //           setTaskList(data);
@@ -41,7 +41,6 @@
 
 // export default App;
 
-
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Form from "./components/Form";
@@ -54,7 +53,9 @@ const App = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:3000/getTask");
+      const response = await fetch(
+        "https://taskmanagerapp12.onrender.com/getTask"
+      );
       if (response.ok) {
         const data = await response.json();
         setTaskList(data);
@@ -74,7 +75,11 @@ const App = () => {
     <>
       <Header>Task Go....</Header>
       <Body>
-        <Form taskList={taskList} setTaskList={setTaskList} fetchTasks={fetchTasks} />
+        <Form
+          taskList={taskList}
+          setTaskList={setTaskList}
+          fetchTasks={fetchTasks}
+        />
         <TaskList taskList={taskList} setTaskList={setTaskList} />
       </Body>
     </>
