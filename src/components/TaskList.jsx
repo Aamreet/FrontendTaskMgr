@@ -106,12 +106,12 @@ const TaskList = ({ taskList, setTaskList }) => {
   };
 
   const handleSearch = async () => {
-    if (sbox.current) {
+    if (sbox.current.value) {
       const searchTerm = sbox.current.value.trim(); // Trim any leading/trailing spaces
       if (searchTerm) {
         try {
           const response = await fetch(
-            `http://localhost:3000/getTask/${encodeURIComponent(searchTerm)}`
+            `https://taskmanagerapp12.onrender.com/getTask/${encodeURIComponent(searchTerm)}`
           );
           if (response.ok) {
             const task = await response.json();
